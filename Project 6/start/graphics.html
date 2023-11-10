@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<style>
+    #thumbs, #image {
+width: 700px;
+border:solid 1px 000;
+text-align:center;
+margin: 0 auto 0 auto;
+color: #000;
+background: #eee;
+padding: 5px;
+}
+#thumbs {
+margin-top: 10px;
+}
+#thumbs img {
+border: solid 1px #000;
+margin: 5px;
+}
+#image{
+height:400px;
+}
+.instructions{
+font-style:italic;
+}
+</style>
+
+<script>
+
+<!-- Begin comment for older browsers//
+
+    var imgArray = new Array(
+    'Image1Lg.jpg',
+    'Image2Lg.jpg',
+    'Image3Lg.jpg',
+    'Image4Lg.jpg'
+    );
+    var titleArray = new Array(
+    'Biking',
+    'Hunting',
+    'Ice Climbing',
+    'Skiing'
+    );
+    var imgPath = "Images/Fullsize/";
+    function swapImage(imgID) {
+    var theImage = document.getElementById('theImage');
+    var textDiv = document.getElementById('bottomText');
+    var newImg;
+    var textTitle;
+    newImg = imgArray[imgID];
+    theImage.src = imgPath + newImg;
+    textTitle=titleArray[imgID];
+    textDiv.innerHTML = textTitle;
+    }
+    function preloadImages() {
+    for(var i = 0; i < imgArray.length; i++) {
+    var tmpImg = new Image;
+    tmpImg.src = imgPath + imgArray[i];
+    }
+    }
+    // End comment for older browsers -->
+    </script>
+
+
+</head>
+
+<body onload="preloadImages()">
+    <div>
+        <a href=""
+        onmouseover="document.getElementById('print').src='Images/Print2.jpg';"
+        onmouseout="document.getElementById('print').src='Images/print1.jpg';">
+        <img src="Images/Print1.jpg" alt="Print Page" width="200" height="50"
+        id="print"></a>
+        </div>
+        
+    <div>
+        <a href=""
+        onmouseover="document.getElementById('logo').src='Images/logo1.jpg';"
+        onmouseout="document.getElementById('logo').src='Images/logo.jpg';">
+    <img src="Images/Logo.jpg" alt="logo" width="200" height="200" id="logo">
+    </a>
+    </div>
+    <p class="instructions">
+        <div id="thumbs">
+        <img src="Images/Thumbnails/Image1Sm.jpg" alt="Biking"
+        onmouseover="swapImage(0);" >
+        <img src="Images/Thumbnails/Image2Sm.jpg" alt="Hunting"
+        onmouseover="swapImage(1);" >
+        <img src="Images/Thumbnails/Image3Sm.jpg" alt="Ice Climbing"
+        onmouseover="swapImage(2);" >
+        <img src="Images/Thumbnails/Image4Sm.jpg" alt="Skiing"
+        onmouseover="swapImage(3);" >
+        <br >
+        </div>
+        <div id="image">
+        <img id="theImage" src="Images/FullSize/Image1Lg.jpg" alt="Biking" >
+        <h3 id="bottomText">Bikers</h3>
+        </div>
+<br><br><br>
+
+<img src="Images/backimage.jpg" alt="background" height="900" width="900">
+
+</body>
+</html>
